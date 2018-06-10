@@ -1,0 +1,2 @@
+<p>count: {{ messageCount | async }}</p>
+<slv-message *ngFor="let message of messages | async" [message]="message"></slv-message>

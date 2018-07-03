@@ -1,4 +1,5 @@
 <div>
-    <h1>Log Messages</h1>
-    <slv-message-list></slv-message-list>
+    <span class="logo">[SLV]</span>
+    <slv-settings [messageCount]="messageCount | async" [selectedProps]="selectedProps | async " [hiddenProps]="hiddenProps | async "></slv-settings>
+    <slv-message-list [messages]="messages | async"></slv-message-list>
 </div>

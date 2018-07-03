@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { reducers } from './state';
 import { MessageListComponent } from './message-list/message-list.component';
 import { MessageComponent } from './message/message.component';
+import { MessageObjectComponent } from './message-object/message-object.component';
+import { SettingsComponent } from './settings/settings.component';
+import { MessageArrayComponent } from './message-array/message-array.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MessageListComponent,
         MessageComponent,
+        MessageObjectComponent,
+        SettingsComponent,
+        MessageArrayComponent,
     ],
     imports: [
         BrowserModule,
@@ -21,8 +27,10 @@ import { MessageComponent } from './message/message.component';
                 messages: [
                     { id: 1, foo: 'abc' },
                     { id: 2, foo: '123' },
-                    { id: 3, foo: 'xyz' },
+                    { id: 3, foo: 'xyz', bar: [ 1, 'two', null ] },
                 ],
+                selected: [],
+                hidden: [],
             },
         }),
         // Instrumentation must be imported after importing StoreModule (config is optional)

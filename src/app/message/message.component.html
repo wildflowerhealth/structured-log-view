@@ -1,3 +1,3 @@
-<div>
-    {{ rawText }}
+<div [ngClass]="messageClass">
+    <slv-message-object [obj]="message" [hidden]="hiddenProps | async"></slv-message-object>
 </div>

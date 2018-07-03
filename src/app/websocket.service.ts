@@ -22,8 +22,8 @@ export class WebsocketService {
             this.socket.on('error', (err: Error) => {
                 console.error('Socket error', err);
             });
-            this.socket.on(ActionType.APPEND, (msg: {}) => this.store.dispatch({
-                type: ActionType.APPEND,
+            this.socket.on(ActionType.APPEND_MESSAGE, (msg: {}) => this.store.dispatch({
+                type: ActionType.APPEND_MESSAGE,
                 payload: msg,
             }));
         }

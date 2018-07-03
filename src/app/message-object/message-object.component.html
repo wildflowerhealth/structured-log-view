@@ -1,0 +1,14 @@
+<span class="messageObject">{{ '{' }}
+    <ng-container class="objectContent" *ngFor="let prop of messageProps; first as isFirst">
+        <span *ngIf="!isFirst">, </span>
+        <span class="prop" (click)="selectProperty(prop.name)">{{ prop.name }}</span>:
+        <ng-container [ngSwitch]="prop.type">
+            <span *ngSwitchCase="'string'" class="string">"{{ prop.val }}"</span>
+            <span *ngSwitchCase="'number'" class="number">{{ prop.val }}</span>
+            <span *ngSwitchCase="'boolean'" class="boolean">{{ prop.val }}</span>
+            <span *ngSwitchCase="'null'" class="null">null</span>
+            <slv-message-object *ngSwitchCase="'object'" [obj]="prop.val" [ancestry]="propertyAncestry(prop.name)" [hidden]="hidden"></slv-message-object>
+            <slv-message-array *ngSwitchCase="'array'" [arr]="prop.val" [ancestry]="propertyAncestry(prop.name)" [hidden]="hidden"></slv-message-array>
+        </ng-container>
+    </ng-container>
+{{ '}' }}</span>

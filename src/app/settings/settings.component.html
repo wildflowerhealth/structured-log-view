@@ -1,0 +1,3 @@
+<span class="stats">count: {{ messageCount }} </span>
+<span class="selected" *ngFor="let prop of selectedProps">{{ prop }} <span (click)="hideProp(prop)">[/]</span> <span (click)="cancelProp(prop)">[x]</span> </span>
+<span class="hidden" *ngFor="let prop of hiddenProps">{{ prop }} <span (click)="unhideProp(prop)">[x]</span> </span>

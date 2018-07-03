@@ -2,8 +2,83 @@
 
 @import '~typeface-ubuntu-mono/index.css';
 
+$bacgroundColor: #1E1E1E; 
+
 body {
     font-family: 'Ubuntu Mono', monospace;
-    background-color: #1E1E1E;
+    background-color: $bacgroundColor;
     color: #D4D4D4;
+    margin: .25em .5em;
+}
+
+.prop {
+    color: #9CDCFE;
+    cursor: default;
+}
+
+.string {
+    color: #CE9178;
+}
+
+.number {
+    color: #4EC9B0;
+}
+
+.boolean {
+    color: #DCDCAA;
+}
+
+.null {
+    color: #569CD6;
+}
+
+.messageObject, .messageArray {
+    display: inline-block;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+.messageObject:hover {
+    background-color: #3A3D41;
+}
+
+.logo {
+    font-size: 2em;
+    float: left;
+    padding-bottom: .25em;
+    padding-right: .25em;
+}
+
+.messageList {
+    clear: both;
+}
+
+.logMessage {
+    border-left-width: .25em;
+    border-left-style: solid;
+    border-left-color: $bacgroundColor;
+}
+
+.logMessage.levelFatal {
+    border-left-color: #f44747;
+}
+
+.logMessage.levelError {
+    border-left-color: #d16969;
+}
+
+.logMessage.levelWarn {
+    border-left-color: #d7ba7d;
+}
+
+.logMessage.levelInfo {
+    border-left-color: #608b4e;
+}
+
+.logMessage.levelDebug {
+    border-left-color: #6796e6;
+}
+
+.logMessage.levelTrace {
+    border-left-color: #d4d4d4;
 }

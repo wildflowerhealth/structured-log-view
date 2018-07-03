@@ -1,0 +1,13 @@
+<span class="messageArray">[
+    <ng-container class="arrayContent" *ngFor="let item of arrayItems; index as idx">
+        <span *ngIf="idx !== 0">, </span>
+        <ng-container [ngSwitch]="item.type">
+            <span *ngSwitchCase="'string'" class="string">"{{ item.val }}"</span>
+            <span *ngSwitchCase="'number'" class="number">{{ item.val }}</span>
+            <span *ngSwitchCase="'boolean'" class="boolean">{{ item.val }}</span>
+            <span *ngSwitchCase="'null'" class="null">null</span>
+            <slv-message-object *ngSwitchCase="'object'" [obj]="item.val" [ancestry]="itemAncestry(idx)" [hidden]="hidden"></slv-message-object>
+            <slv-message-array *ngSwitchCase="'array'" [arr]="item.val" [ancestry]="itemAncestry(idx)" [hidden]="hidden"></slv-message-array>
+        </ng-container>
+    </ng-container>
+]</span>

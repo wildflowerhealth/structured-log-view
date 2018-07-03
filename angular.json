@@ -54,7 +54,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "structured-log-view:build"
+            "browserTarget": "structured-log-view:build",
+            "port": 4201
           },
           "configurations": {
             "production": {
